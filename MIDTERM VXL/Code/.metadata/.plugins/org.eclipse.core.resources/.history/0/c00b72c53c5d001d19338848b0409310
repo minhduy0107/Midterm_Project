@@ -1,0 +1,37 @@
+/*
+ * global.h
+ *
+ *  Created on: Nov 6, 2022
+ *      Author: dangm
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+#include "timer.h"
+#include "button.h"
+
+#define BUTT_0 0
+#define BUTT_1 1
+#define BUTT_2 2
+#define BUTT_3 3
+#define BUTT_4 4
+#define BUTT_5 5
+#define BUTT_6 6
+#define BUTT_7 7
+#define BUTT_8 8
+#define BUTT_9 9
+
+#define LONG_0		30
+#define LONG_1		31
+#define LONG_2		32
+#define LONG_3		33
+#define LONG_4		34
+#define LONG_5		35
+#define LONG_6		36
+#define LONG_7		37
+#define LONG_8		38
+#define LONG_9		39
+extern int status;
+
+#endif /* INC_GLOBAL_H_ */

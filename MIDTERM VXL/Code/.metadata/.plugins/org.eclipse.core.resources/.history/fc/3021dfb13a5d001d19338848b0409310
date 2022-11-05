@@ -1,0 +1,27 @@
+/*
+ * global.h
+ *
+ *  Created on: Nov 6, 2022
+ *      Author: dangm
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+#include "timer.h"
+#include "button.h"
+
+#define BUTT_0 0
+#define BUTT_1 1
+#define BUTT_2 2
+#define BUTT_3 3
+#define BUTT_4 4
+#define BUTT_5 5
+#define BUTT_6 6
+#define BUTT_7 7
+#define BUTT_8 8
+#define BUTT_9 9
+
+extern int status;
+
+#endif /* INC_GLOBAL_H_ */

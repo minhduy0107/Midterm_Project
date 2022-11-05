@@ -1,0 +1,216 @@
+/*
+ * fsm_step3.c
+ *
+ *  Created on: 6 Nov 2022
+ *      Author: dangm
+ */
+#include "fsm_step3.h"
+#include "global.h"
+#include "button.h"
+#include "main.h"
+#include "7segdisplay.h"
+
+void fsm_step3(){
+	switch(status){
+	case INIT:
+	display7seg(0);
+	status = BUTT_0;
+	setTimer1(200);
+	ledstatus = LED_ON;
+	break;
+	case AUTO_0:
+	if(RESET_flag == 1){
+		RESET_flag = 0;
+		status = INIT;
+	}
+	if(INC_flag == 1){
+		INC_flag = 0;
+		display7seg(0);
+	}
+	if(DEC_flag == 1){
+		DEC_flag = 0;
+		status = BUTT_0;
+	}
+	break;
+	case AUTO_1:
+	if(RESET_flag == 1){
+		RESET_flag = 0;
+		status = INIT;
+	}
+	if(timer_flag1 == 1){
+		timer_flag1 = 0;
+		display7seg(1);
+		status = AUTO_0;
+		setTimer1(100);
+	}
+	if(INC_flag == 1){
+		INC_flag = 0;
+		status = BUTT_1;
+	}
+	if(DEC_flag == 1){
+		DEC_flag = 0;
+		status = BUTT_1;
+	}
+	break;
+	case AUTO_2:
+	if(RESET_flag == 1){
+		RESET_flag = 0;
+		status = INIT;
+	}
+	if(timer_flag1 == 1){
+		timer_flag1 = 0;
+		display7seg(2);
+		status = AUTO_1;
+		setTimer1(100);
+	}
+	if(INC_flag == 1){
+		INC_flag = 0;
+		status = BUTT_2;
+	}
+	if(DEC_flag == 1){
+		DEC_flag = 0;
+		status = BUTT_2;
+	}
+	break;
+	case AUTO_3:
+	if(RESET_flag == 1){
+		RESET_flag = 0;
+		status = INIT;
+	}
+	if(timer_flag1 == 1){
+		timer_flag1 = 0;
+		display7seg(3);
+		status = AUTO_2;
+		setTimer1(100);
+	}
+	if(INC_flag == 1){
+		INC_flag = 0;
+		status = BUTT_3;
+	}
+	if(DEC_flag == 1){
+		DEC_flag = 0;
+		status = BUTT_3;
+	}
+	break;
+	case AUTO_4:
+	if(RESET_flag == 1){
+		RESET_flag = 0;
+		status = INIT;
+	}
+	if(timer_flag1 == 1){
+		timer_flag1 = 0;
+		display7seg(4);
+		status = AUTO_3;
+		setTimer1(100);
+	}
+	if(INC_flag == 1){
+		INC_flag = 0;
+		status = BUTT_4;
+	}
+	if(DEC_flag == 1){
+		DEC_flag = 0;
+		status = BUTT_4;
+	}
+	break;
+	case AUTO_5:
+	if(RESET_flag == 1){
+		RESET_flag = 0;
+		status = INIT;
+	}
+	if(timer_flag1 == 1){
+		timer_flag1 = 0;
+		display7seg(5);
+		status = AUTO_4;
+		setTimer1(100);
+	}
+	if(INC_flag == 1){
+		INC_flag = 0;
+		status = BUTT_5;
+	}
+	if(DEC_flag == 1){
+		DEC_flag = 0;
+		status = BUTT_5;
+	}
+	break;
+	case AUTO_6:
+	if(RESET_flag == 1){
+		RESET_flag = 0;
+		status = INIT;
+	}
+	if(timer_flag1 == 1){
+		timer_flag1 = 0;
+		display7seg(6);
+		status = AUTO_5;
+		setTimer1(100);
+	}
+	if(INC_flag == 1){
+		INC_flag = 0;
+		status = BUTT_6;
+	}
+	if(DEC_flag == 1){
+		DEC_flag = 0;
+		status = BUTT_6;
+	}
+	break;
+	case AUTO_7:
+	if(RESET_flag == 1){
+		RESET_flag = 0;
+		status = INIT;
+	}
+	if(timer_flag1 == 1){
+		timer_flag1 = 0;
+		display7seg(7);
+		status = AUTO_6;
+		setTimer1(100);
+	}
+	if(INC_flag == 1){
+		INC_flag = 0;
+		status = BUTT_7;
+	}
+	if(DEC_flag == 1){
+		DEC_flag = 0;
+		status = BUTT_7;
+	}
+	break;
+	case AUTO_8:
+	if(RESET_flag == 1){
+		RESET_flag = 0;
+		status = INIT;
+	}
+	if(timer_flag1 == 1){
+		timer_flag1 = 0;
+		display7seg(8);
+		status = AUTO_7;
+		setTimer1(100);
+	}
+	if(INC_flag == 1){
+		INC_flag = 0;
+		status = BUTT_8;
+	}
+	if(DEC_flag == 1){
+		DEC_flag = 0;
+		status = BUTT_8;
+	}
+	break;
+	case AUTO_9:
+	if(RESET_flag == 1){
+		RESET_flag = 0;
+		status = INIT;
+	}
+	if(timer_flag1 == 1){
+		timer_flag1 = 0;
+		display7seg(9);
+		status = AUTO_8;
+		setTimer1(100);
+	}
+	if(INC_flag == 1){
+		INC_flag = 0;
+		status = BUTT_9;
+	}
+	if(DEC_flag == 1){
+		DEC_flag = 0;
+		status = BUTT_9;
+	}
+	break;
+	}
+}

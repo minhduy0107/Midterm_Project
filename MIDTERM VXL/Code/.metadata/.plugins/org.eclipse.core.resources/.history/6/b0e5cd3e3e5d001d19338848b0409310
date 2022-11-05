@@ -1,0 +1,17 @@
+/*
+ * DebugLed.c
+ *
+ *  Created on: Nov 6, 2022
+ *      Author: dangm
+ */
+#include "DebugLed.h"
+#include "global.h"
+
+void DebugLed(){
+	switch(ledstatus){
+	case LED_INIT:
+		ledstastus = LED_ON;
+		setTimer1(100);
+		break;
+	}
+}
